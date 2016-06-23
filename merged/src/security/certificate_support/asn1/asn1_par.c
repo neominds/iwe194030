@@ -220,12 +220,12 @@ static int asn1_parse2(BIO *bp, const unsigned char **pp, long length, int offse
 				(tag == V_ASN1_T61STRING) ||
 				(tag == V_ASN1_IA5STRING) ||
 				(tag == V_ASN1_VISIBLESTRING) ||
-				(tag == V_ASN1_UTCTIME) ||
-				(tag == V_ASN1_GENERALIZEDTIME))
-				{
-				if (BIO_write(bp,":",1) <= 0) goto end;
-				if ((len > 0) &&
-					BIO_write(bp,(const char *)p,(int)len)
+                (tag == V_ASN1_NUMERICSTRING) ||
+                (tag == V_ASN1_UTF8STRING) ||
+                (tag == V_ASN1_UTCTIME) || (tag == V_ASN1_GENERALIZEDTIME)) {
+                if (BIO_write(bp, ":", 1) <= 0)
+                    goto end;
+                if ((len > 0) && BIO_write(bp, (const char *)p, (int)len)
 					!= (int)len)
 					goto end;
 				}

@@ -162,6 +162,14 @@ int X509_verify_cert(X509_STORE_CTX *ctx)
         X509err(X509_F_X509_VERIFY_CERT, X509_R_NO_CERT_SET_FOR_US_TO_VERIFY);
         return -1;
     }
+    if (ctx->chain != NULL) {
+        /*
+         * This X509_STORE_CTX has already been used to verify a cert. We
+         * cannot do another one.
+         */
+        X509err(X509_F_X509_VERIFY_CERT, ERR_R_SHOULD_NOT_HAVE_BEEN_CALLED);
+        return -1;
+    }
 
     cb = ctx->verify_cb;
 
