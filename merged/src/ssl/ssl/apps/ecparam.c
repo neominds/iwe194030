@@ -462,17 +462,13 @@ bad:
 			goto end;
 		}
 
-	if (check)
-		{
-		if (group == NULL)
-			BIO_printf(bio_err, "no elliptic curve parameters\n");
+    if (check) {
 		BIO_printf(bio_err, "checking elliptic curve parameters: ");
-		if (!EC_GROUP_check(group, NULL))
-			{
+        if (!EC_GROUP_check(group, NULL)) {
 			BIO_printf(bio_err, "failed\n");
 			ERR_print_errors(bio_err);
+            goto end;
 			}
-		else
 			BIO_printf(bio_err, "ok\n");
 			
 		}

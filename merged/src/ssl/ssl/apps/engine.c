@@ -1,6 +1,7 @@
-/* apps/engine.c -*- mode: C; c-file-style: "eay" -*- */
-/* Written by Richard Levitte <richard@levitte.org> for the OpenSSL
- * project 2000.
+/* apps/engine.c */
+/*
+ * Written by Richard Levitte <richard@levitte.org> for the OpenSSL project
+ * 2000.
  */
 /* ====================================================================
  * Copyright (c) 2000 The OpenSSL Project.  All rights reserved.
@@ -99,10 +100,7 @@ static void identity(void *ptr)
 
 static int append_buf(char **buf, const char *s, int *size, int step)
 	{
-	int l = strlen(s);
-
-	if (*buf == NULL)
-		{
+    if (*buf == NULL) {
 		*size = step;
 		*buf = OPENSSL_malloc(*size);
 		if (*buf == NULL)
@@ -110,11 +108,7 @@ static int append_buf(char **buf, const char *s, int *size, int step)
 		**buf = '\0';
 		}
 
-	if (**buf != '\0')
-		l += 2;		/* ", " */
-
-	if (strlen(*buf) + strlen(s) >= (unsigned int)*size)
-		{
+    if (strlen(*buf) + strlen(s) >= (unsigned int)*size) {
 		*size += step;
 		*buf = OPENSSL_realloc(*buf, *size);
 		}

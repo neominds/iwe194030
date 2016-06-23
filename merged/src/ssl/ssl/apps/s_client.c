@@ -1914,6 +1914,9 @@ int nm_client(char *str1,char *str2,char *str3,char *str4,char *str5,char *str6,
         EVP_PKEY_free(key);
     if (pass)
         OPENSSL_free(pass);
+#ifndef OPENSSL_NO_SRP
+    OPENSSL_free(srp_arg.srppassin);
+#endif
     if (vpm)
         X509_VERIFY_PARAM_free(vpm);
     if (cbuf != NULL) {

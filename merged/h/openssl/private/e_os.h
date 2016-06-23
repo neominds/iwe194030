@@ -62,9 +62,10 @@
 #include <openssl/opensslconf.h>
 
 #include <openssl/e_os2.h>
-/* <openssl/e_os2.h> contains what we can justify to make visible
- * to the outside; this file e_os.h is not part of the exported
- * interface. */
+/*
+ * <openssl/e_os2.h> contains what we can justify to make visible to the
+ * outside; this file e_os.h is not part of the exported interface.
+ */
 
 #ifdef  __cplusplus
 extern "C" {
@@ -77,14 +78,18 @@ extern "C" {
 #endif
 
 #ifndef DEVRANDOM
-/* set this to a comma-separated list of 'random' device files to try out.
- * My default, we will try to read at least one of these files */
+/*
+ * set this to a comma-separated list of 'random' device files to try out. My
+ * default, we will try to read at least one of these files
+ */
 #define DEVRANDOM "/dev/urandom","/dev/random","/dev/srandom"
 #endif
 #ifndef DEVRANDOM_EGD
-/* set this to a comma-seperated list of 'egd' sockets to try out. These
- * sockets will be tried in the order listed in case accessing the device files
- * listed in DEVRANDOM did not return enough entropy. */
+/*
+ * set this to a comma-seperated list of 'egd' sockets to try out. These
+ * sockets will be tried in the order listed in case accessing the device
+ * files listed in DEVRANDOM did not return enough entropy.
+ */
 #define DEVRANDOM_EGD "/var/run/egd-pool","/dev/egd-pool","/etc/egd-pool","/etc/entropy"
 #endif
 
@@ -112,8 +117,10 @@ extern "C" {
 /********************************************************************
  The Microsoft section
  ********************************************************************/
-/* The following is used becaue of the small stack in some
- * Microsoft operating systems */
+/*
+ * The following is used because of the small stack in some Microsoft
+ * operating systems
+ */
 #if defined(OPENSSL_SYS_MSDOS) && !defined(OPENSSL_SYSNAME_WIN32)
 #  define MS_STATIC	static
 #else
