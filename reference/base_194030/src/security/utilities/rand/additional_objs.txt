@@ -1,0 +1,1 @@
+OBJS+=	rand_cci.o

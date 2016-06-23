@@ -1,0 +1,1 @@
+OBJS+= pkcs7_link_syms.o

@@ -1,0 +1,1 @@
+OBJS+= pem_link_syms.o

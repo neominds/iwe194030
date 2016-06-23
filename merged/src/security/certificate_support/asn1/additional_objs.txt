@@ -1,0 +1,1 @@
+OBJS+= asn1_link_syms.o
