@@ -693,7 +693,6 @@ static int get_client_hello(SSL *s)
 		
 		}
 		
-//debug code by neominds
 		/*printf("Inside client hello function in s2_serve.c\n");*/ /* LEVANCIO S10 comment delete R.Miura 2016/02/03 */
 		/*printf("List of server ciphers\n");*/ /* LEVANCIO S10 comment delete R.Miura 2016/02/03 */
 

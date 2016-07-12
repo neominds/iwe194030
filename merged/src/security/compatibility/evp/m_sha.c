@@ -107,7 +107,7 @@ const EVP_MD *EVP_sha(void)
 
 const EVP_MD *EVP_sha1_copy_safe(void)
 {
-	/*printf("___NOT IMPLEMENTED BY NEOMINDS___\n");*//* LEVANCIO S10 comment delete R.Miura 2016/02/03 */
+	/*printf("___NOT IMPLEMENTED YET\n");*//* LEVANCIO S10 comment delete R.Miura 2016/02/03 */
 }
  	 	 	 	
 
